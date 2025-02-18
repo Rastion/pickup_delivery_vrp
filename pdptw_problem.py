@@ -1,7 +1,13 @@
-import math, random, sys
+import math, random, sys, os
 from qubots.base_problem import BaseProblem
 
 def read_elem(filename):
+
+    # Resolve relative path with respect to this module’s directory.
+    if not os.path.isabs(filename):
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        filename = os.path.join(base_dir, filename)
+
     with open(filename) as f:
         return [str(elem) for elem in f.read().split()]
 
