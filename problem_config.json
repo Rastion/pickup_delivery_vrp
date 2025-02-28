@@ -3,13 +3,17 @@
     "default_params": {
       "instance_file": "instances/lc101.txt"
     },
-    "problem_type": "Pickup-and-Delivery Problem with Time Windows",
+    "creator": "Rastion",
+    "type": "problem",
+    "problem_name": "Pick up and delivery with time windows",
     "description": "In the PDPTW, a fleet of vehicles with uniform capacity must perform both pickups and deliveries for customers within specified time windows. Each customer is associated with a demand, a service time, an earliest start time and a latest finish time. In addition, each pickup-delivery pair is linked (the pickup must occur before the corresponding delivery on the same route). Vehicles start and end at a common depot. The objectives are, in lexicographic order, to minimize total lateness (lateness at customers and upon returning home), minimize the number of trucks used, and minimize the total distance traveled.",
+    "link_to_dataset": "https://github.com/Rastion/pickup_delivery_vrp/blob/main/instances/lc101.txt",
     "keywords": [
       "PDPTW",
       "pickup and delivery",
       "time windows",
-      "vehicle routing"
+      "vehicle routing",
+      "route-optimization"
     ],
     "data_format": {
       "instance_file": {
@@ -28,11 +32,8 @@
       "description": "The objective is lexicographic: first, minimize total lateness (which ideally should be zero); then, minimize the number of trucks used; and finally, minimize the total distance traveled. The total lateness is computed as the sum of lateness at each customer (if service ends after its latest allowed time) plus any lateness incurred when returning to the depot beyond the maximum horizon."
     },
     "solution_representation": "A dictionary with key 'routes' mapping to a list of routes (one per truck).",
-    "compatible_optimizers": [
-      "genetic_algorithm",
-      "simulated_annealing",
-      "particle_swarm",
-      "tabu_search"
+    "formulations": [
+      ""
     ]
   }
   
